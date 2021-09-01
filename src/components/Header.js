@@ -1,12 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import GoogleAuth from './GoogleAuth'
 
 
 const Header = () => {
     return (
         <div className = 'ui secondary menu'>
-            <h4 className = 'item'>Recipe App</h4>
+            <Link to = '/' className = 'item'>Recipe App</Link>
             <div className = 'right menu'>
-                <button className = 'ui negative'> Google</button>
+                <GoogleAuth />
             </div>
         </div>
     )
