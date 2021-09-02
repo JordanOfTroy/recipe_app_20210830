@@ -10,7 +10,7 @@ import DeleteRecipe from './components/DeleteRecipe'
 export default (
     <Switch>
         <Route exact path = '/' component = {Landing} />
-        <Route path = '/home' component = {Homepage} />
+        <Route path = '/home/:id' component = {Homepage} />
         <Route path = '/newRecipe' component = {NewRecipe} />
         <Route path = '/editRecipe/:id' component = {EditRecipe} />
         <Route path = '/deleteRecipe/:id' component = {DeleteRecipe} />
