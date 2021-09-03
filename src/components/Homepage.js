@@ -28,7 +28,6 @@ class Homepage extends React.Component {
 
 
 const mapStateToProps = (state) => {
-    console.log({state})
     return {
         recipes: state.recipes.userRecipes
     }
