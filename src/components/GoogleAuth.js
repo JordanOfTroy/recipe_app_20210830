@@ -24,29 +24,25 @@ class GoogleAuth extends React.Component {
   onAuthChange = async (isSignedIn) => {
     if (isSignedIn) {
       const profile = this.auth.currentUser.get().getBasicProfile();
+      const userId = profile.getId();
       const user = {
         fName: profile.getGivenName(),
         lName: profile.getFamilyName(),
         email: profile.getEmail(),
-        userId: profile.getId(),
       };
 
       try {
-        let userRefs = await db
-          .collection("users")
-          .where("userId", "==", user.userId)
-          .get();
-
-        if (!userRefs.size) {
-          console.log("hitting?");
-          await db.collection("users").add(user);
+        let userRef = db.collection("users").doc(userId);
+        let userData = await userRef.get();
+        if (!userData.exists) {
+          await userRef.set(user);
         }
       } catch (e) {
         console.error(e);
       }
 
-      this.props.signIn(user);
-      history.push(`/home/${user.userId}`);
+      this.props.signIn({ userId, ...user });
+      history.push(`/home/${userId}`);
     } else {
       this.props.signOut();
       history.push("/");
