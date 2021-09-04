@@ -5,7 +5,6 @@ import {
     FETCH_RECIPE,
     FETCH_RECIPES
 } from '../actions/Types'
-import axios from 'axios'
 
 export const getUserRecipes = (userId) => async (dispatch) => {
     // make a call to db to get all user recipes.
