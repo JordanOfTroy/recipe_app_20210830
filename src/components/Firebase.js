@@ -1,13 +1,21 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite'
+const {
+  REACT_APP_API_KEY,
+  REACT_APP_AUTH_DOMAIN,
+  REACT_APP_PROJECT_ID,
+  REACT_APP_STORAGE_BUCKET,
+  REACT_APP_MESSAGING_SENDER_ID,
+  REACT_APP_ID
+} = process.env
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAEpvnQn3QkePGqKEwzgF2DfYs6XEZM3yY",
-    authDomain: "recipe-app-324622.firebaseapp.com",
-    projectId: "recipe-app-324622",
-    storageBucket: "recipe-app-324622.appspot.com",
-    messagingSenderId: "699713671454",
-    appId: "1:699713671454:web:9bd3a43c625825e953790f"
+    apiKey: REACT_APP_API_KEY,
+    authDomain: REACT_APP_AUTH_DOMAIN,
+    projectId: REACT_APP_PROJECT_ID,
+    storageBucket: REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: REACT_APP_MESSAGING_SENDER_ID,
+    appId: REACT_APP_ID
   }
 
 const app = initializeApp(firebaseConfig)
