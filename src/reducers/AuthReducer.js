@@ -2,16 +2,16 @@ import { SIGN_IN, SIGN_OUT } from "../actions/Types";
 
 const INITIAL_STATE = {
     isSignedIn: null,
-    userId: null
+    user: null
 }
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case SIGN_IN:
-            return {...state, isSignedIn: true, userId: action.payload}
+            return {...state, isSignedIn: true, user: action.payload}
 
         case SIGN_OUT:
-            return {...state, isSignedIn: false, userId: null}
+            return {...state, isSignedIn: false, user: null}
 
         default:
             return state

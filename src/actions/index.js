@@ -2,13 +2,12 @@ import {
     SIGN_IN,
     SIGN_OUT
 } from './Types'
-import axios from 'axios'
 
 
-export const signIn = (userId) => {
+export const signIn = (user) => {
     return {
         type: SIGN_IN,
-        payload: userId
+        payload: user
     }
 }
 
