@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { setUserCreatedRecipes } from "../actions/RecipesActions";
 import { db } from "./Firebase";
-import Recipe from "./Recipe";
+import RecipeCard from "./RecipeCard";
 
 class Homepage extends React.Component {
   async componentDidMount() {
@@ -18,8 +18,9 @@ class Homepage extends React.Component {
   }
 
   renderUserRecipes = (recipes) => {
+    // check id from params again id in db before rendering list
     return recipes.map((recipe) => {
-      return <Recipe key={recipe.id} recipe={recipe} />;
+      return <RecipeCard key={recipe.id} recipe={recipe} />;
     });
   };
 
