@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const RecipeCard = (props) => {
   const renderIngredientList = (arr) => {
@@ -21,7 +22,12 @@ const RecipeCard = (props) => {
           </div>
         </div>
         <div className="extra content">
-          <button className="ui button right floated negative">Delete</button>
+          <Link
+            to={`/deleteRecipe/${recipe.createdBy}`}
+            className="ui button right floated negative"
+          >
+            Delete
+          </Link>
           <button className="ui button right floated primary ">Edit</button>
           <button className="ui button right floated positive">View</button>
           {/* View will be a Link to ='/recipeId

@@ -27,7 +27,7 @@ class Homepage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Homepage</h1>
+        <button className='ui button primary'>Add Recipe</button>
         {this.props.recipes ? this.renderUserRecipes(this.props.recipes) : null}
       </div>
     );

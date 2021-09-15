@@ -6,7 +6,7 @@ const Landing = () => {
     <div className="ui grid landingWrapper">
       <div className="landingCard">
         <h1>Recipe App</h1>
-        <p>A place to store, create, adn share recipes.</p>
+        <p>A place to store, create, and share recipes.</p>
       </div>
     </div>
   );
