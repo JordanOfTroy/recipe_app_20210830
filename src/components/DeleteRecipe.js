@@ -1,17 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Modal from "./Modal";
+import history from "../History";
 
 const DeleteRecipe = (props) => {
   const renderActions = () => {
     const { id } = props.match.params;
-    console.log("WhatTheFuck:", id);
     return (
       <>
         <button
           className="ui button negative"
-          // onClick={() => this.props.deleteStream(this.props.match.params.id)}
-          onClick={console.log("you deleted a recipe!")}
         >
           Delete
         </button>
@@ -23,6 +21,7 @@ const DeleteRecipe = (props) => {
   };
 
   const renderContent = () => {
+      console.log(props)
     return "are you sure you want to delete this recipe?";
   };
 
@@ -32,7 +31,7 @@ const DeleteRecipe = (props) => {
         title="Delete Recipe"
         content={renderContent()}
         actions={renderActions()}
-        onDismiss={() => console.log("you clicked dismiss")}
+        onDismiss={() => history.push(`/home/${props.match.params.id}`)}
       />
     </div>
   );
