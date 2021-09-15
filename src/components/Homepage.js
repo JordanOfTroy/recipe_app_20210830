@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { setUserCreatedRecipes } from "../actions/RecipesActions";
 import { db } from "./Firebase";
 import RecipeCard from "./RecipeCard";
@@ -27,7 +28,9 @@ class Homepage extends React.Component {
   render() {
     return (
       <div>
-        <button className='ui button primary'>Add Recipe</button>
+        <Link to={`/addRecipe/${this.props.match.params.id}`} className="ui button primary">
+          Add Recipe
+        </Link>
         {this.props.recipes ? this.renderUserRecipes(this.props.recipes) : null}
       </div>
     );
