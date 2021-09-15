@@ -29,7 +29,12 @@ const RecipeCard = (props) => {
             Delete
           </Link>
           <button className="ui button right floated primary ">Edit</button>
-          <button className="ui button right floated positive">View</button>
+          <Link
+            to={`/viewRecipe/${recipe.id}`}
+            className="ui button right floated positive"
+          >
+            View
+          </Link>
           {/* View will be a Link to ='/recipeId
             will probably be modal displaying whole recipe
           ' */}

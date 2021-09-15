@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 const Modal = (props) => {
-  const { title, content, actions, onDismiss} = props;
+  const { title, content, actions, onDismiss } = props;
 
   return ReactDOM.createPortal(
     <div className="ui dimmer modals visible active">
@@ -11,9 +11,9 @@ const Modal = (props) => {
         onClick={(e) => e.stopPropagation()}
       >
         <i className="close icon" onClick={onDismiss}></i>
-        <div className="header">{title}</div>
+        <div className="header">{title ? title : null}</div>
         <div className="content">{content}</div>
-        <div className="actions">{actions}</div>
+        <div className="actions">{actions ? actions : null}</div>
       </div>
     </div>,
     document.querySelector("#modal")
