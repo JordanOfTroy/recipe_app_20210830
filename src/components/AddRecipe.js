@@ -1,17 +1,16 @@
 import React from "react";
 import history from "../History";
 import Modal from "./Modal";
+import { Link } from "react-router-dom";
 
 class AddRecipe extends React.Component {
-  componentDidMount = () => {
-    const { id } = this.props.match.params;
-  };
-
   renderActions = () => {
     return (
       <>
         <button className="ui button positive">Add Recipe</button>
-        <button className="ui button">Cancel</button>
+        <Link to={`/home/${this.props.match.params.id}`} className="ui button">
+          Cancel
+        </Link>
       </>
     );
   };
